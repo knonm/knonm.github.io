@@ -24,7 +24,6 @@
       {% endfor %}
     </ul></nav>
 
-
     {% for page in site.posts reversed %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
       <div id="{{id}}" class="section p-{{id}}">
@@ -36,10 +35,10 @@
         {% elsif page.fa-icon %}
         <div class="subtlecircle sectiondivider faicon">
           <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-{{ page.fa-icon }} fa-stack-1x"></i>
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-{{ page.fa-icon }} fa-stack-1x"></i>
           </span>
-          <h5 class="icon-title">{{ page.title }}</h5>
+          <h5>{{ page.title }}</h5>
         </div>
         {% endif %}
         <div class="container {{ page.style }}">
@@ -47,7 +46,6 @@
         </div>
       </div>
     {% endfor %}
-
 
     <div id="footer" class="section text-white">
       <div class="container">
