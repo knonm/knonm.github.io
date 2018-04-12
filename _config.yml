@@ -15,9 +15,9 @@ markdown: kramdown
 title:       "Matheus Canon"
 keywords:    "SinglePaged, jekyll, template, github, blog, single page"
 description: "A single-page template for Jekyll based blogs (like what you'd use on github pages!)"
-source_link: "https://github.com/knonm/knonm.github.io"
-github_link: "https://github.com/knonm"
-linkedin_link: "https://www.linkedin.com/in/matheuscanon/"
+source_link: "//github.com/knonm/knonm.github.io"
+github_link: "//github.com/knonm"
+linkedin_link: "//www.linkedin.com/in/matheuscanon/"
 email: "matheus.canon@gmail.com"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
 
@@ -26,7 +26,7 @@ colors:
   black:     '#111111'
   white:     '#f8f8f8'
   blue:      '#49a7e9'
-  green:     '#9bcf2f'
+  green:     '#63bd2f'
   purple:    '#c869bf'
   orange:    '#fab125'
   turquoise: '#0fbfcf'
