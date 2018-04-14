@@ -13,8 +13,8 @@ markdown: kramdown
 
 ### content configuration ###
 title:       "Matheus Canon"
-keywords:    "SinglePaged, jekyll, template, github, blog, single page"
-description: "A single-page template for Jekyll based blogs (like what you'd use on github pages!)"
+keywords:    "Matheus Canon, Canon, portfolio, jekyll"
+description: "Porfólio do Matheus Canon"
 source_link: "//github.com/knonm/knonm.github.io"
 github_link: "//github.com/knonm"
 linkedin_link: "//www.linkedin.com/in/matheuscanon/"
