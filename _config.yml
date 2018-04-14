@@ -18,7 +18,6 @@ description: "A single-page template for Jekyll based blogs (like what you'd use
 source_link: "//github.com/knonm/knonm.github.io"
 github_link: "//github.com/knonm"
 linkedin_link: "//www.linkedin.com/in/matheuscanon/"
-mastodon_link: "//mastodon.social/@knonm"
 email: "matheus.canon@gmail.com"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
 
