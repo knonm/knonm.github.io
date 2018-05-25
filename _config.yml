@@ -21,15 +21,40 @@ linkedin_link: "//www.linkedin.com/in/matheuscanon/"
 email: "matheus.canon@gmail.com"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
 
+bg_template_color: '#2e2e2e'
+bg_content_color: '#f8f8f8'
+
+# #49a7e9
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
   white:     '#f8f8f8'
-  blue:      '#49a7e9'
-  green:     '#63bd2f'
+  blue:      '#0080FF'
+  green:     '#00994C'
   purple:    '#c869bf'
   orange:    '#fab125'
-  turquoise: '#0fbfcf'
+  turquoise: '#20B2AA'
+  coral:     '#FF7F50'
+  wheat:     '#f5deb3'
+  gray:      '#2e2e2e'
+
+logos:
+  PL/SQL:          'img/logos/oracle.svg'
+  SQL:             'img/logos/sql.svg'
+  Shell script:    'img/logos/shell.svg'
+  Java:            'img/logos/java.svg'
+  Oracle Database: 'img/logos/oracle.svg'
+  Git:             'img/logos/git.svg'
+  'C#':            'img/logos/csharp.svg'
+  Transact-SQL:    'img/logos/sqlserver.svg'
+  Python:          'img/logos/python.svg'
+  HTML:            'img/logos/html.svg'
+  CSS:             'img/logos/css.svg'
+  Neo4j:           'img/logos/neo4j.svg'
+  C:               'img/logos/c.svg'
+  Javascript:      'img/logos/js.svg'
+  Docker:          'img/logos/docker.svg'
+  Android:         'img/logos/android.svg'
 
 kramdown:
   auto_ids:  false

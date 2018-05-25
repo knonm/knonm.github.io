@@ -19,10 +19,20 @@ html { box-sizing: border-box; }
   {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
   {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
-  nav .p-{{id}} { border-color: {{ bg }}; }
+  /* nav .p-{{id}} { border-color: {{ bg }}; }
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
   #{{id}} a { color: {{ fg }}; }
+  #{{id}} .sectiondivider { color: {{ bg }}; } */
+  nav .p-{{id}} { border-color: {{ bg }}; }
+  #{{id}} { background-color: white !important; color: black; border-width: 2em 2em 2em 2em; border-style: solid; border-color: {{ site.bg_template_color }}; }
+  #{{id}} a { color: black; }
   #{{id}} .sectiondivider { color: {{ bg }}; }
+  #{{id}} .sectiondivider h2::before, #{{id}} .sectiondivider h2::after {
+    content:"";
+    display: inline-block;
+    vertical-align:middle;
+    background-color: {{ bg }};
+  }
 {% endfor %}
 
 
@@ -170,7 +180,7 @@ nav ul li:hover, nav ul li.active {
   display:block;
   width:100%;
   min-height:300px;
-  padding:210px 0;
+  padding:50px 0;
   background:url(img/bgnoise.png);
   /* generated noise from noisetexturegenerator.com */
 }
@@ -184,8 +194,8 @@ nav ul li:hover, nav ul li.active {
   padding: 8px 0;
   min-height:0;
   text-align:center;
-  background-color:#2e2e2e;
   background-image:none;
+  background-color: {{ site.bg_template_color }};
 }
 #footer .container p { font-size:13px; margin:0; }
 
@@ -200,13 +210,15 @@ nav ul li:hover, nav ul li.active {
 }
 
 .sectiondivider {
-  width:270px;
-  height:270px;
+  width:100%;
+  height:200px;
   padding:15px;
-  position:absolute;
-  top:-135px;
-  left:50%;
-  margin-left:-135px;
+  margin-top: 2em;
+  margin-bottom: 6em;
+  position:relative;
+  top:-30px;
+  text-align:center;
+  z-index:3;
 }
 
 .sectiondivider img {
@@ -216,44 +228,27 @@ nav ul li:hover, nav ul li.active {
   margin-top: -20px;
 }
 
-.sectiondivider .fa-stack {
-  font-size: 130px;
-  position: static;
-  margin-top: -8px;
-}
-.sectiondivider .fa-circle { color: #fff; }
-
-.sectiondivider h5 {
-  font-size:15px;
+.sectiondivider h2 {
   font-weight:700;
   text-transform:uppercase;
-  position:absolute;
-  bottom:30px;
-  left:auto;
+  position:relative;
   text-align:center;
   display:block;
   z-index:6;
-  width:240px;
+  margin-top: 0.5em;
 }
 
 .sectiondivider.imaged {
   text-shadow: 1px 1px 3px #333;
 }
 
-
-.columned {
-  -webkit-column-count: 3;
-  -moz-column-count:    3;
-  column-count:         3;
-
-  -webkit-column-gap: 40px;
-  -moz-column-gap:    40px;
-  column-gap:         40px;
-
-  -webkit-column-rule: 1px outset rgba(255,255,255,0.5);
-  -moz-column-rule:    1px outset rgba(255,255,255,0.5);
-  column-rule:         1px outset rgba(255,255,255,0.5);
+.sectiondivider h2::before, .sectiondivider h2::after {
+  width:10%;
+  height:.25rem;
+  margin-right:1rem;
+  margin-left:1rem;
 }
+
 .longlist { font-size: 14px !important; }
 .longlist li { margin-bottom: 3px; }
 
@@ -328,30 +323,38 @@ nav ul li:hover, nav ul li.active {
 
 
   .section { padding:130px 0; }
-  .sectiondivider {
-    width:200px;
-    height:200px;
-    padding:15px;
-    top:-100px;
-    margin-left:-100px;
-  }
-  .sectiondivider img {
-    width:150px;
-    height:180px;
-  }
-  .sectiondivider .fa-stack {
-    font-size: 100px;
-    margin-top: -14px;
-  }
-  .sectiondivider h5 {
-    font-size:15px;
-    bottom:20px;
-    width:170px
+
+  .section:first-of-type {
+      padding-top: 80px;
   }
 
-  .columned {
-    -webkit-column-count: 2;
-    -moz-column-count:    2;
-    column-count:         2;
+  .sectiondivider {
+    width:100%;
+    height:200px;
+    padding:15px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position:relative;
+    top:-100px;
+    text-align:center;
+    z-index:3;
+  }
+
+  .sectiondivider h2 {
+    font-weight:700;
+    text-transform:uppercase;
+    position:relative;
+    text-align:center;
+    display:block;
+    z-index:6;
+    margin-top: 0.5em;
+  }
+
+  .sectiondivider h2::before, .sectiondivider h2::after {
+    display: block;
+    width:85%;
+    height:.25rem;
+    margin-right:0.5rem;
+    margin-left:0.5rem;
   }
 }

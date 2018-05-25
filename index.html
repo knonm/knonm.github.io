@@ -5,40 +5,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}</title>
 	<meta name="keywords" content="{{ site.keywords }}">
 	<meta name="description" content="{{ site.description }}">
-  <link rel="stylesheet" href="combo.css">
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-  {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
-	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
+  <link rel="stylesheet" type="text/css" href="combo.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:400,300,700">
+  {% if site.favicon %}
+    <link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">
+  {% endif %}
+	{% if site.touch_icon %}
+    <link rel="apple-touch-icon" href="{{ site.touch_icon }}">
+  {% endif %}
+  <title>{{ site.title }}</title>
 </head>
 <body>
   <div id="main">
 
-    <nav><ul>
-      {% for node in site.posts reversed %}
-        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
-      {% endfor %}
-    </ul></nav>
+    <nav>
+      <ul>
+        {% for node in site.posts reversed %}
+          {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+            <li class="p-{{id}}">
+              <a href="#{{id}}">{{node.title}}</a>
+            </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
     {% for page in site.posts reversed %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
       <div id="{{id}}" class="section p-{{id}}">
-        {% if page.icon %}
-        <div class="subtlecircle sectiondivider imaged">
-          <img src="{{page.icon}}" alt="section icon" />
-          <h5 class="icon-title">{{ page.title }}</h5>
-        </div>
-        {% elsif page.fa-icon %}
-        <div class="subtlecircle sectiondivider faicon">
-          <span class="fa-stack">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-{{ page.fa-icon }} fa-stack-1x"></i>
-          </span>
-          <h5>{{ page.title }}</h5>
+        {% if page.fa-icon %}
+        <div class="sectiondivider">
+          <i class="fas fa-{{ page.fa-icon }} fa-10x"></i>
+          <h2>{{ page.title }}</h2>
         </div>
         {% endif %}
         <div class="container {{ page.style }}">
@@ -53,10 +52,12 @@
         {{ foottext | markdownify }}
       </div>
     </div>
+
   </div>
 
 {% include analytics.html %}
 </body>
+<script defer src="//use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="site.js"></script>
 </html>

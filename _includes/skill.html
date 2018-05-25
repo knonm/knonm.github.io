@@ -1,0 +1,13 @@
+<img class="scale-with-grid fa-4x" src="{{ site.logos[include.skill] | relative_url }}" />
+<br/>
+{{ include.skill }}
+<br/>
+{% if include.stars > 0 %}
+  {% for s in (1..include.stars) %}
+    <i class="fas fa-star fa-1x" style="color:Gold"></i>
+  {% endfor %}
+  {% assign nextstars = include.stars | plus: 1 %}
+  {% for s in (nextstars..3) %}
+    <i class="far fa-star fa-1x" style="color:Gold"></i>
+  {% endfor %}
+{% endif %}
